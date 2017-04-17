@@ -11,11 +11,12 @@ app.get('/', function (req, res) {
 });
 
 //specify the directories for the express object to use
-app.use(express.static('client/build'));
-app.use(require('./client/controllers'))
-app.use(express.static('public'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
+app.use(express.static('client/build'));
+app.use(require('./controllers'))
+app.use(express.static('public'))
+
 
 //specifies the port/address to use for the website
 var server = app.listen(3000, function () {
