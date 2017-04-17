@@ -13,9 +13,9 @@ filmRouter.get('/',function(req,res){
 })
 
 // //index for individual films and their respective review
-// filmRouter.get('/:id',function(req,res){
-//   console.log(req)
-//   res.json({data:filmsArray[req.params.id]})
-// })
+filmRouter.get('/:id',function(req,res){
+  console.log(req)
+  res.json({data:filmsArray[req.params.id]})
+})
 
 module.exports = filmRouter
