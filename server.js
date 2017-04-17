@@ -4,7 +4,6 @@ var express = require('express');
 var app = express();
 var path = require('path')
 
-
 //specifies the html page for the webpage
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname + '/client/build/index.html'));
@@ -16,7 +15,6 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.static('client/build'));
 app.use(require('./controllers'))
 app.use(express.static('public'))
-
 
 //specifies the port/address to use for the website
 var server = app.listen(3000, function () {
